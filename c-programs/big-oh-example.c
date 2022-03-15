@@ -12,7 +12,8 @@ void o_1(char arr[], char * c) {
 int o_n(char arr[]) {
     
     int sum = 0;
-    for(int i = 0;i < strlen(arr);i++) {
+    int n = strlen(arr); // Corrected from the videos.
+    for(int i = 0;i < n;i++) {
         sum += arr[i];
     }
     return sum;
@@ -21,7 +22,8 @@ int o_n(char arr[]) {
 // This is also O(n) but it technically runs O(1/2 * n) times. However for Big-Oh, we don't care about the constant 1/2. So it's still O(n).
 int o_n_example2(char arr[]) {
     int sum = 0;
-    for(int i = 0;i < strlen(arr) / 2;i++) {
+    int n = strlen(arr); // Corrected from the videos.
+    for(int i = 0;i < n / 2;i++) {
         sum += arr[i];
     }
     return sum;
@@ -30,11 +32,12 @@ int o_n_example2(char arr[]) {
 // This is also O(n) but it technically runs O(2n) times. However, similarly, we don't care about the constant 2. Thus it's still O(n).
 int o_n_example3(char arr[]) {
     int sum = 0;
-    for(int i = 0;i < strlen(arr);i++) {
+    int n = strlen(arr); // Corrected from the videos.
+    for(int i = 0;i < n;i++) {
         sum += arr[i];
     }
     
-    for(int i = 0;i < strlen(arr);i++) {
+    for(int i = 0;i < n;i++) {
         sum += arr[i];
     }
     
@@ -45,13 +48,14 @@ int o_n_example3(char arr[]) {
 void o_n2(char arr[]) {
     int i, j, min_idx;
     char temp;
+    int n = strlen(arr); // Corrected from the videos.
   
     // One by one move boundary of unsorted subarray.
-    for (int i = 0;i < (strlen(arr) - 1);i++)
+    for (int i = 0;i < n - 1;i++)
     {
         // Find the minimum element in unsorted array.
         min_idx = i;
-        for (int j = i + 1;j < strlen(arr);j++)
+        for (int j = i + 1;j < n - 1;j++)
           if (arr[j] < arr[min_idx])
             min_idx = j;
   
